@@ -1,0 +1,31 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'LC/images/logo.png'%}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats | Let's Chat </title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'LC/css/chats.css'%}">
+</head>
+<body>
+    <header><nav>
+        <img class="logo" src="{%static 'LC/images/logo.png'%}" alt=""><ul class="main-nav">
+        <li><a href="{% url 'my_profile'%}">Profile</a></li>
+        <li><a href="{% url 'users'%}">Users</a></li>
+        <li><a href="{%url 'chats'%}">Chats</a></li>
+        <li><a href="{%url 'logout'%}">Log Out</a></li>
+    </ul>
+    </nav></header>
+    <h1>Welcome, {{ request.user.first_name}}</h1>
+    <ul>
+        <li> Username:{{request.user.username}}</li>
+        <li>Email:{{ request.user.email}}</li>
+        <li>Profile pic: <img class="profile" src="{{request.user.user_info.profile_pic.url}}" alt="profile pic"></li>
+        
+    </ul>
+   
+    <script src="{%static 'LC/js/chats.js'%}"></script>
+</body>
+</html>

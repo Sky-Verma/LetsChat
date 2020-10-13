@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'LC/images/logo.png'%}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'LC/css/login.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <title>Login | Let's Chat</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    {% if message%}
+    
+    <div>{{message}}</div>
+    
+    {%endif%}
+    {% if create_message%} 
+    <p>{{create_message}}</p>
+    <a href="{%url 'signup'%}">Register Yourself</a>
+    {%endif%}
+   
+<form action="{% url 'loginForm'%}" method="POST">
+{% csrf_token%}
+<input type="text" name="username" placeholder="Username">
+<input type="password" name="password" placeholder="Password">
+<button>Login</button>
+</form>
+<script src="{%static 'LC/js/login.js'%}"></script>
+</body>
+</html>

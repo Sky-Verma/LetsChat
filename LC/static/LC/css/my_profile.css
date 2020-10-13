@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'PT Serif', serif;
+}
+header{
+    height: 80px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+    background: #115978;
+    
+}
+nav{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    
+    margin: auto;
+
+}
+img.logo{
+    height: 70px;
+    width: 70px;
+}
+ul{
+    display: flex;
+    list-style: none;
+    width: auto;
+}
+li{
+    width: 100px;
+
+}
+li a{
+    text-decoration: none;
+   color: white;
+}

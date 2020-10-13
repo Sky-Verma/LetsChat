@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="{% static 'LC/images/logo.png'%}" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Let's Chat</title> <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{%static 'LC/css/my_profile.css'%}">
+</head>
+<body>
+  {{message}}
+  <form action="{% url 'signup'%}" method="POST">
+    {%csrf_token%}
+   
+    {{form.username.label}} 
+    {{form.username}}<br>
+    {{form.first_name.label}} 
+    {{form.first_name}}<br>
+    {{form.last_name.label}} 
+    {{form.last_name}}<br>
+    {{form.email.label}} 
+    {{form.email}} <br>
+    {{form.password1.label}} 
+    {{form.password1}} <br>
+    {{form.password2.label}}
+    {{form.password2}} <br>
+    <button>Create</button>
+  </form>
+  <script src="{%static 'LC/js/chats.js'%}"></script>
+</body>
+</html>
