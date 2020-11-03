@@ -27,11 +27,10 @@ def login_request(request):
             return HttpResponseRedirect(reverse('login'))
         else:
             return render(request,'LC/login.html',{
-                'message':'Invalid Credentials.',
-                'create_message':'Not registered?'
+                'message':'Invalid Credentials.'
                 
             })
-    return render(request,'LC/login.html',{'message':'Login'})
+    return render(request,'LC/login.html')
 
 def signup_view(request):
     form=forms.CustomUserCreateForm()

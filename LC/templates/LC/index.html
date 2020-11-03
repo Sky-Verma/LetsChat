@@ -6,12 +6,22 @@
     <link rel="shortcut icon" href="{% static 'LC/images/logo.png'%}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'LC/css/index.css'%}">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
     <title>Let's Chat</title>
 </head>
 <body>
-    <a href="{%url 'login'%}">login</a>
-<a href="{% url 'signup'%}">New User?</a>
+    <header><nav>
+        <img class="logo" src="{%static 'LC/images/logo.png'%}" alt=""><ul class="main-nav">
+        <li class="active"><a href="#dev">Developer</a></li>
+        <li><a href="#about">About</a></li>
+        <li ><a class="active" href="#contact">Contact Us</a></li>
+    </ul>
+    </nav></header>
+    <h1 class="hero">Let's Chat</h1>
+    <p>It is a small chating app for testing purpose. <br>
+    I am very happy to see you collaborating in my small project.</p>
+    <div class="buttons"><a class="btn" href="{%url 'login'%}">LOGIN</a>
+        <a class="btn" href="{% url 'signup'%}">SIGNUP</a></div>
 <script src="{%static 'LC/js/index.js'%}"></script>
 </body>
 </html>

@@ -6,27 +6,37 @@
     <link rel="shortcut icon" href="{% static 'LC/images/logo.png'%}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'LC/css/login.css'%}">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'LC/css/all.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
     <title>Login | Let's Chat</title>
+
 </head>
 <body>
-    <h1>Welcome</h1>
+    <header><nav>
+        <img class="logo" src="{%static 'LC/images/logo.png'%}" alt=""><ul class="main-nav">
+        
+        <li ><a class="active" href="{% url 'login'%}">LOGIN</a></li>
+        <li ><a  href="{% url 'signup'%}">SIGNUP</a></li>
+    </ul>
+    </nav></header>
+    <h1 class="hero">Welcome</h1>
     {% if message%}
     
     <div>{{message}}</div>
     
     {%endif%}
-    {% if create_message%} 
-    <p>{{create_message}}</p>
-    <a href="{%url 'signup'%}">Register Yourself</a>
-    {%endif%}
+    
    
 <form action="{% url 'loginForm'%}" method="POST">
-{% csrf_token%}
-<input type="text" name="username" placeholder="Username">
-<input type="password" name="password" placeholder="Password">
-<button>Login</button>
+{% csrf_token%} <div class="username"><i class="fas fa-user fa-2x"></i> <input type="text" name="username" placeholder="Username"></div>
+<div class="password"><i  class="fas fa-lock fa-2x"></i> <input type="password" name="password" placeholder="Password"></div> <button>
+<i class="fab fa-telegram-plane fa-2x"></i>
+<br></button>
 </form>
+
+
+
 <script src="{%static 'LC/js/login.js'%}"></script>
+<script src="{%static 'LC/js/all.js'%}"></script>
 </body>
 </html>

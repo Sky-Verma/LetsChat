@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Exo 2", sans-serif;
+}
+header {
+  height: 80px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  background: #115978;
+}
+nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+
+  margin: auto;
+}
+li a:hover {
+  border-bottom: 3px solid white;
+  transition-duration: 0.3s;
+}
+img.logo {
+  height: 70px;
+  width: 70px;
+}
+ul {
+  display: flex;
+  list-style: none;
+  width: auto;
+}
+li {
+  width: 100px;
+  text-align: center;
+}
+li a {
+  text-decoration: none;
+  color: white;
+  height: 70%;
+  width: 70%;
+}
+li a:focus {
+  border-bottom: 3px solid white;
+}
+.active {
+  border-bottom: 3px solid white;
+}
+.hero {
+  font-size: 50px;
+  position: absolute;
+  top: 25vh;
+  color: #115978;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.message {
+  top: 31.5vh;
+  position: absolute;
+  color: red;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+button {
+  height: 40px;
+  background: none;
+  border: none;
+
+  width: 70px;
+  position: absolute;
+  left: 45%;
+
+  top: 110%;
+  border-radius: 5px;
+  color: #115978;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+input:focus{background: white ;color: #115978;border: #115978;} button:hover{box-shadow: 0px 2px 5px rgb(0, 0, 0);background: #115978;transition-duration: 0.3s;}button:hover svg{color: white;}
+form {
+  height: 300px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  top: 55%;
+  display: grid;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+input {
+  height: 35px;
+  text-align: center;
+  font-size: 25px;
+  background: linear-gradient(#115978 70%, white);
+  color: white;
+  letter-spacing: 3px;
+  width: 300px;
+  border: none;
+  font-family: "Exo 2", sans-serif;
+}
+.not-same {
+  border: red 2px solid;
+}
+.same {
+  border: rgb(13, 211, 13) 2px solid;
+}

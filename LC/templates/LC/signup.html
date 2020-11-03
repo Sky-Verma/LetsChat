@@ -5,28 +5,41 @@
   <link rel="shortcut icon" href="{% static 'LC/images/logo.png'%}" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up | Let's Chat</title> <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{%static 'LC/css/my_profile.css'%}">
+  <title>Sign Up | Let's Chat</title> <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{%static 'LC/css/signup.css'%}">
+  <link rel="stylesheet" href="{%static 'LC/all.css'%}">
 </head>
 <body>
-  {{message}}
+  <header><nav>
+    <img class="logo" src="{%static 'LC/images/logo.png'%}" alt=""><ul class="main-nav">
+    
+    <li ><a  href="{% url 'login'%}">LOGIN</a></li>
+    <li ><a class="active" href="{% url 'signup'%}">SIGNUP</a></li>
+</ul>
+</nav></header>
+<div class="hero">Welcome</div>
+  <div class="message">{{message}}</div>
   <form action="{% url 'signup'%}" method="POST">
     {%csrf_token%}
    
-    {{form.username.label}} 
-    {{form.username}}<br>
-    {{form.first_name.label}} 
-    {{form.first_name}}<br>
-    {{form.last_name.label}} 
-    {{form.last_name}}<br>
-    {{form.email.label}} 
-    {{form.email}} <br>
-    {{form.password1.label}} 
-    {{form.password1}} <br>
-    {{form.password2.label}}
-    {{form.password2}} <br>
-    <button>Create</button>
+    <div class="username">{{form.username}}</div>
+   <div class="first_name"> {{form.first_name}} </div>
+    
+   <div class="last_name">
+    {{form.last_name}}</div>
+     
+    
+     
+   <div class="email"> {{form.email}} </div>
+    
+    <div class="password1">{{form.password1}}</div> 
+    
+ <div class="password2">   {{form.password2}} </div>
+ <button>
+  <i class="fab fa-telegram-plane fa-2x"></i>
+  <br></button>
   </form>
-  <script src="{%static 'LC/js/chats.js'%}"></script>
+  <script src="{%static 'LC/js/signup.js'%}"></script>
+  <script src="{%static 'LC/js/all.js'%}"></script>
 </body>
 </html>

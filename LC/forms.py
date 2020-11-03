@@ -17,6 +17,11 @@ class CustomUserCreateForm(UserCreationForm):
     class Meta:
         model=User
         fields=['username','password1','email','first_name','last_name','password2']
+    def confirm_password(self):
+        password1=request.POST['password1']
+        password2=request.POST['password2']
+        
+
 
    
 

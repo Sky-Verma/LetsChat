@@ -6,13 +6,14 @@
   <link rel="shortcut icon" href="{% static 'LC/images/logo.png'%}" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile | Let's Chat</title>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{%static 'LC/css/all.css'%}">
   <link rel="stylesheet" href="{%static 'LC/css/my_profile.css'%}">
 </head>
 <body>
   <header><nav>
     <img class="logo" src="{%static 'LC/images/logo.png'%}" alt=""><ul>
-    <li><a href="{% url 'my_profile'%}">Profile</a></li>
+    <li ><a class="active" href="{% url 'my_profile'%}">Profile</a></li>
     <li><a href="{% url 'users'%}">Users</a></li>
     <li><a href="{%url 'chats'%}">Chats</a></li>
     <li><a href="{%url 'logout'%}">Log Out</a></li>
@@ -23,7 +24,12 @@
   {{form.as_p}}
     <button>Save</button>
 </form>
-<img src="{{request.user.user_info.profile_pic.url}}" alt="Profile Pic">
-<script src="{%static 'LC/js/chats.js'%}"></script>
+<div class="name">
+{{request.user.first_name}}  {{request.user.last_name}} </div>
+<div class="about">
+{{request.user.user_info.about}} <button class="edit"><i class="fas fa-pencil-alt" id="pencil"></i></button></div>
+<img class="profile" src="{{request.user.user_info.profile_pic.url}}" alt="Profile Pic">
+<script src="{%static 'LC/js/my_profile.js'%}"></script>
+<script src="{%static 'LC/js/all.js'%}"></script>
 </body>
 </html>
